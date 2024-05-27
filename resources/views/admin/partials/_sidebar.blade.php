@@ -15,6 +15,12 @@
       <i class="bi bi-user"></i>
       <span>Student</span>
     </a>
+
+  </li><li class="nav-item">
+    <a class="nav-link collapsed" href="/admin/Courses">
+      <i class="bi bi-user"></i>
+      <span>Courses</span>
+    </a>
   </li>
 
 </ul>
