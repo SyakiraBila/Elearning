@@ -47,7 +47,7 @@
                             <option value="{{ $course->id }}" {{ $student->courses_id == $course->id ? 'selected' : '' }}>{{ $course->name }}</option>
                             @endforeach
                         </select>
-                    </div>
+                    </div>4
 
                     <div class="mb-2">
                         <label for="class" class="form-label">Class</label>
