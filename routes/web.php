@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\StudentController;
+use GuzzleHttp\Middleware;
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,16 +19,16 @@ Route::get('/dashboard', function () {
 Route::middleware('auth')->group(function () {
     
 Route::get('admin/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('admin/Student', [StudentController::class, 'index']);
+Route::get('admin/Student', [StudentController::class, 'index'])->middleware('admin');
 Route::get('admin/courses', [CoursesController::class, 'index']);
 
-Route::get('admin/Student/create', [StudentController::class, 'create']);
+Route::get('admin/Student/create', [StudentController::class, 'create'])->middleware('admin');
 Route::post('admin/Student/store', [StudentController::class, 'store']);
 Route::get('admin/Student/edit/{id}', [StudentController::class, 'edit']);
 Route::put('admin/Student/update/{id}', [StudentController::class, 'update']);
 Route::delete('admin/Student/delete/{id}', [StudentController::class, 'destroy']);
 
-Route::get('admin/courses/create', [CoursesController::class, 'create']);
+Route::get('admin/courses/create', [CoursesController::class, 'create'])->middleware('admin');
 Route::post('admin/courses/store', [CoursesController::class, 'store']);
 Route::get('admin/courses/edit/{id}', [CoursesController::class, 'edit']);
 Route::put('admin/courses/update/{id}', [CoursesController::class, 'update']);

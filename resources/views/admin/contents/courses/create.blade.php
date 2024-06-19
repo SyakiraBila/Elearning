@@ -23,7 +23,7 @@
                     </div>
 
                     <div class="mb-2">
-                        <label for="category" class="form-label">Kategori</label>
+                        <label for="cgategory" class="form-label">Kategori</label>
                         <input type="text" name="category" id="category" class="form-control">
                     </div>
 
